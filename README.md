@@ -1,5 +1,4 @@
 # selenium-typescript
-# selenium-typescript
 ## Getting Started
 
 First, clone the [repository](https://github.com/sagumjpaul/selenium-typescript.git) & install the dependencies:
