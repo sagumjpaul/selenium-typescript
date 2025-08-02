@@ -22,37 +22,30 @@ describe('Verify User can add/remove item to cart', function () {
     title: 'Search | Balsam Hill',
     item: 'christmas tree',
     row: 3,
-    height_1: 4.5, 
+    height_1: 4.5,
     quantity: '1',
     itemRemovedMessage: ' Tree has been removed.',
     price: '$349'
-   
-
-
   };
 
 
   it('User can add and remove from cart', async function () {
-    
 
     //search item: christmas tree
     await page.home.searchItem(data.item);
     await sleep(10000);
-    
 
     //click the third result that appears form search result
     await page.search.selectItem(data.row);
-    await sleep(10000); 
-  
+    await sleep(10000);
 
     // item customization: select height 6.5'
     await page.item.selectheight(data.height_1);
     await sleep(5000);
-  
+
     //store product page price for validation later in checkout page
     const productPagePrice = await page.item.getProductPagePrice();
     console.log(`View Price: ${productPagePrice}`);
-  
 
     // //click add to cart
     await page.item.clickAddToCart();
@@ -61,16 +54,14 @@ describe('Verify User can add/remove item to cart', function () {
     // //click view cart
     await page.item.clickViewCart();
     await sleep(5000);
-   
 
     // //store cart page price for validation later in checkout page
     const cartPagePrice = await page.cart.getCartPrice();
     console.log(`View Cart Price: ${cartPagePrice}`);
 
-
     //Validate that the price displayed on the results page is the same on the product page and the cart page.
     expect(productPagePrice).equal(cartPagePrice);
-   
+
     //Verify quantity equal to 1
     const quantity = await page.cart.quantity();
     expect(quantity).equal(data.quantity)
@@ -83,11 +74,6 @@ describe('Verify User can add/remove item to cart', function () {
     // //Verify undo button is displayed and tree is removed
     const itemRemoved = await page.cart.itemRemoved()
     expect(itemRemoved).contains(data.itemRemovedMessage);
-
-
-
-
-
 
   });
 });
