@@ -1,4 +1,7 @@
 # selenium-typescript
+
+Create automated test for Balsam assessment using selenium-typescript with mocha/chai framework.
+
 ## Getting Started
 
 First, clone the [repository](https://github.com/sagumjpaul/selenium-typescript.git) & install the dependencies:
@@ -30,6 +33,9 @@ npm run test #run tests using browser specified in tests file
 |── reports/                    # Test Report for the tests executed
 |── tests/                      # Test Suites and Test Cases
 ```
+test location = /Users/johnpaulsagum/selenium-typescript-1/tests/admin/customer-add-remove-item.test.ts
+
+PageObjects location = /Users/johnpaulsagum/selenium-typescript-1/pages
 
 ## Reference
 https://github.com/imranwijaya/selenium-typescript-example
