@@ -33,9 +33,9 @@ npm run test #run tests using browser specified in tests file
 |── reports/                    # Test Report for the tests executed
 |── tests/                      # Test Suites and Test Cases
 ```
-test location = /Users/johnpaulsagum/selenium-typescript-1/tests/admin/customer-add-remove-item.test.ts
+test location = /tests/admin/customer-add-remove-item.test.ts
 
-PageObjects location = /Users/johnpaulsagum/selenium-typescript-1/pages
+PageObjects location = /pages
 
 ## Reference
 https://github.com/imranwijaya/selenium-typescript-example
